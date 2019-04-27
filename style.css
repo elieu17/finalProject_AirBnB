@@ -45,7 +45,7 @@ body {
 /*--- Landing Page --*/
 
 .home-inner {
-  background-image: url(img/sf_landing.png.jpg)
+  background-image: url(img/background1.PNG)
 }
 .dropdown-toggle {
   background-color: #343A40; border:0ch;
@@ -56,7 +56,9 @@ body {
   position: absolute;
   top: 53%;
   z-index: 1;
-  color: white;
+  color: white;  
+  background-color: lightgray;
+  opacity: 0.8;
   text-transform: uppercase;
 }
 
@@ -115,9 +117,10 @@ body {
 
   }
 
+
   h3.heading {
-    font-size: 1.9rem;
-    font-weight: 700;
+    font-size: 2.3rem;
+    font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 1.9rem;
   }
@@ -133,9 +136,10 @@ body {
   }
 
   .feature h3 {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     text-transform: uppercase;
     padding-bottom: .4rem;
+    color: #189582;
   }
 
   .feature p {
@@ -187,7 +191,7 @@ blockquote .svg-inline--fa {
   }
 
   .fixed {
-    background-image: url(img/sf_landing.png.jpg);
+    background-image: url(img/background1.PNG);
     z-index: -1;
   }
 
