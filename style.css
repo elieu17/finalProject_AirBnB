@@ -80,6 +80,7 @@ body {
   border-radius: 0;
 }
 
+
 /*--- Overview Section ---*/
 
 .narrow {
@@ -208,7 +209,7 @@ blockquote .svg-inline--fa {
   
   .fixed-background p {
     margin-top: 2rem;
-  }
+  
 
 
 /*--- Contact Section  ---*/
