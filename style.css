@@ -14,6 +14,13 @@ body {
   margin-top: -4rem;
 }
 
+.maps:before {
+  display: block;
+  content: "";
+  height: 1rem;
+  margin-top: 4rem;
+}
+
 /*--- Navigation --*/
 
 .navbar {
@@ -44,6 +51,7 @@ body {
 
 /*--- Landing Page --*/
 
+/*-- Master Homepage --*/
 .home-inner {
   background-image: url(img/background1.PNG)
 }
@@ -118,12 +126,12 @@ body {
 
   }
 
-
   h3.heading {
     font-size: 2.3rem;
     font-weight: 800;
     text-transform: uppercase;
-    margin-bottom: 1.9rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
   }
   .heading-underline {
     width: 3rem;
@@ -209,7 +217,7 @@ blockquote .svg-inline--fa {
   
   .fixed-background p {
     margin-top: 2rem;
-  
+  }
 
 
 /*--- Contact Section  ---*/
@@ -259,6 +267,8 @@ hr.socket {
     font-size: 1rem;
   }
 }
+
+
 
   /*============ BOOTSTRAP BREAK POINTS:
 Extra small (xs) devices (portrait phones, less than 576px)
