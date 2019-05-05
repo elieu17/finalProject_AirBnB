@@ -11,6 +11,16 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/fixed.css">
 
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
+ 
+
 </head>
 
 <body data-spy="scroll" data-target="#navbarResponsive" >
@@ -112,21 +122,25 @@
 
 
 
-
 <!--- Analysis section here -->
 <div id="analysis" class="maps">
 
     <div class="pricingmap-background">
 
             <div class="col-12 text-center" >
-                    <p>MAP WILL GO HERE</p>
+                    <p>
+                        <h1>PRICE CRIME MAP</h1>
+                            
+                            <tr><td style="text-align: center; border: none">
+                            <iframe src="Price and Crime_Map/index.html" width="1516" height="816">
+                            <div class="leaflet-control-search leaflet-control"><label class="search-input" for="searchtext9" style="display: none;"></label><input class="search-input" type="text" size="9" autocomplete="off" autocapitalize="off" placeholder="Search..." id="searchtext9" style="display: none;"><ul class="search-tooltip" style="display: none;"></ul><a class="search-cancel" href="#" title="Cancel" style="display: none;"><span>⊗</span></a><a class="search-button" href="#" title="Search..."></a><div class="search-alert" style="display: none;"></div></div>
+                            </iframe>
+                            </td></tr>
+                        
+                    </p>
             </div>
             
-
-            <!-- INSERT JAVASCRIPT HREF FOR MAP HERE-->
             
-            </div> 
-                
 
      </div> <!-- End of Dark Row -->
 
