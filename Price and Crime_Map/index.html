@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8">
     <title>NYC Boroughs</title>
@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
     crossorigin=""/>
+    
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
+    
 
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -18,16 +20,33 @@
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
+
+    <!--LEAF SEARCH CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="static/src/leaflet-search.css" />
+    <link rel="stylesheet" href="static/css/style_search.css" />
+    <link rel="stylesheet" href="static/dist/leaflet-search.min.css" />
+
   </head>
   <body>
-
+    <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
+    <script src="static/dist/leaflet-search.src.js"></script>
+    <script src="static/dist/leaflet-search.src.min.js"></script>
+    <script src="static/js/leaflet-search.js"></script>
+    <script src="static/js/data.js"></script>
+    
     <!-- map div -->
-    <div id="map"></div>
+    
+    <div id="map">
+      
+    </div>
     <!-- API key -->
     <script type="text/javascript" src="static/js/config.js"></script>
     <!-- JS  -->
     <script type="text/javascript" src="static/js/data.js"></script>
     <script type="text/javascript" src="static/js/logic.js"></script>
+    
 
   </body>
 </html>

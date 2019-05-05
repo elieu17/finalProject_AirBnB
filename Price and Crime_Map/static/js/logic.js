@@ -1,6 +1,5 @@
 // create separate overlay layers
 var price_layer = new L.LayerGroup();
-var neighborhood_layer = new L.LayerGroup();
 var assault = new L.LayerGroup();
 var burglary = new L.LayerGroup();
 var drugs = new L.LayerGroup();
@@ -43,18 +42,63 @@ function createMap(listings) {
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
     "Price Map": price_layer,
-    "Neighborhoods": neighborhood_layer,
     "Assaults": assault,
     "Burglaries": burglary,
     "Drug-related": drugs,
     "Larceny": larceny
   }
+  
   // Creating map object
   var map = L.map("map", {
     center: [40.7128, -74.0059],
     zoom: 11,
     layers: [streetmap, price_layer]
   });
+
+  ////////////////////////////////////////////////////////////////////////
+  
+  var data = gjsonMarkers;
+  
+  var featuresLayer = new L.GeoJSON(data, {
+      onEachFeature: function(feature, marker) {
+        marker.bindPopup('<h4>'+ feature.properties.neighborhood +'</h4>');
+      }
+    });
+  
+  map.addLayer(featuresLayer);
+
+  var searchControl = new L.Control.Search({
+    layer: featuresLayer,
+    propertyName: 'neighborhood',
+    marker: false,
+    moveToLocation: function(latlng, title, map) {
+      //map.fitBounds( latlng.layer.getBounds() );
+      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+        map.setView(latlng, zoom); // access the zoom
+    }
+  });
+
+  searchControl.on('search:locationfound', function(e) {
+    
+    //console.log('search:locationfound', );
+
+    //map.removeLayer(this._markerSearch)
+
+    e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+    if(e.layer._popup)
+      e.layer.openPopup();
+
+  }).on('search:collapsed', function(e) {
+
+    featuresLayer.eachLayer(function(layer) {	//restore feature color
+      featuresLayer.resetStyle(layer);
+    });	
+  });
+  
+  map.addControl( searchControl );  //inizialize search control
+
+  
+  /////////////////////////////////////////////////////////////////////////////////////////
 
   // add layer control to map
   L.control.layers(baseMaps, overlayMaps, {
@@ -123,37 +167,37 @@ L.geoJson(gjsonMarkers, {
   }
 }).addTo(price_layer);
 
-//Just Neighborhoods
-L.geoJson(gjsonMarkers, {
-  style: function(){
-    return{
-      color: "grey",
-      fillOpacity: 0.2,
-      weight: 3.0  
-    };
-  },
-  // Called on each feature
-  onEachFeature: function(feature, layer) {
-    // set mouse events to change map styling
-    layer.on({
-      // mouseover event
-      mouseover: function(event) {
-        layer = event.target;
-        layer.setStyle({
-          fillOpacity: 1
-        });
-      },
-      // mouseout event
-      mouseout: function(event) {
-        layer = event.target;
-        layer.setStyle({
-          fillOpacity: 0.6
-        });
-      }
-    });
-    layer.bindPopup("<h1>" + feature.properties.neighborhood);
-  }
-}).addTo(neighborhood_layer);
+// //Just Neighborhoods
+// L.geoJson(gjsonMarkers, {
+//   style: function(){
+//     return{
+//       color: "grey",
+//       fillOpacity: 0.2,
+//       weight: 3.0  
+//     };
+//   },
+//   // Called on each feature
+//   onEachFeature: function(feature, layer) {
+//     // set mouse events to change map styling
+//     layer.on({
+//       // mouseover event
+//       mouseover: function(event) {
+//         layer = event.target;
+//         layer.setStyle({
+//           fillOpacity: 1
+//         });
+//       },
+//       // mouseout event
+//       mouseout: function(event) {
+//         layer = event.target;
+//         layer.setStyle({
+//           fillOpacity: 0.6
+//         });
+//       }
+//     });
+//     layer.bindPopup("<h1>" + feature.properties.neighborhood);
+//   }
+// }).addTo(neighborhood_layer);
 
 // send price layer to createMap function
 createMap(price_layer);
