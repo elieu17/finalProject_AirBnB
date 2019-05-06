@@ -231,7 +231,18 @@ footer {
 .contactName {
   font-size: 2rem;
   text-transform: uppercase;
-  color: #1EBBA3
+  color: #1EBBA3;
+}
+
+.teamMembers {
+  font-size: 0.98rem;
+}
+
+.teamName {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: #1EBBA3;
 }
 
 
