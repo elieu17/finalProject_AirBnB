@@ -1,0 +1,1 @@
+datare = {"female" : [{"pos": 29.15, "neutral": 68.94, "neg": 1.7}], "male" :[{"pos": 31.19, "neutral": 66.98,  "neg": 1.5}]}
